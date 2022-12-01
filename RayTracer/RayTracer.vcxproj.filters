@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Renderer">
       <UniqueIdentifier>{8107807e-5d7b-48a7-a5e8-17c68df51157}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{384ceb07-8704-45cd-bc67-7f3f366e3926}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -24,9 +27,21 @@
     <ClCompile Include="Renderer\Renderer.cpp">
       <Filter>Source Files\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer\Canvas.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer\Renderer.h">
+      <Filter>Source Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\mathUtils.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Color.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Canvas.h">
       <Filter>Source Files\Renderer</Filter>
     </ClInclude>
   </ItemGroup>

@@ -151,10 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Renderer\Canvas.cpp" />
     <ClCompile Include="Renderer\Renderer.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Math\Color.h" />
+    <ClInclude Include="Math\mathUtils.h" />
+    <ClInclude Include="Renderer\Canvas.h" />
     <ClInclude Include="Renderer\Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
