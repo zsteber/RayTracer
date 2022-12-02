@@ -7,9 +7,9 @@ int main(int, char**)
 {
 	Renderer renderer;
 	renderer.Initialize();
-	renderer.CreateWindow(600, 400);
+	renderer.CreateWindow(800, 600);
 
-	Canvas canvas(600, 400, renderer);
+	Canvas canvas(800, 600, renderer);
 
 	bool quit = false;
 	while (!quit)
@@ -31,10 +31,11 @@ int main(int, char**)
 			break;
 		}
 
-		canvas.Clear({ 0, 0, 0, 1});
-		for (int i = 0; 1 < 1000; i++)
-		{
-			canvas.DrawPoint({ random(0, 600), random(0, 400) }, { 1, 1, 1, 1, });
+		//render scene
+		canvas.Clear({ 0, 0, 0, 1 });
+		for (int i = 0; i < 10000; i++) {
+
+			canvas.DrawPoint({ random(0, 800), random(0, 600) }, { 1, 1, 1, 1 });
 		}
 		canvas.Update();
 
