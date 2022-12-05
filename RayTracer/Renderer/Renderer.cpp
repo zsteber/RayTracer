@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Renderer::Render(Canvas& canvas)
+void Renderer::Render(Canvas& canvas, Object* object)
 {
 	// camera / viewport 
 	glm::vec3 lowerLeft{ -2, -1, -1 };
@@ -25,10 +25,14 @@ void Renderer::Render(Canvas& canvas)
 
 			RaycastHit raycastHit;
 			color3 color;
-			
-				// get gradient background color from ray 
+			if (object->Hit(ray, 0.01f, 100.0f, raycastHit))
+			{
+				color = { 0, 1, 0 }; 
+			}
+			else
+			{
 				color = GetBackgroundFromRay(ray);
-			
+			}
 			canvas.DrawPoint({ x, y }, color4(color, 1));
 		}
 	}

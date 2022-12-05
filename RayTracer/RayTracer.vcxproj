@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Objects\Sphere.cpp" />
     <ClCompile Include="Renderer\Canvas.cpp" />
     <ClCompile Include="Renderer\Renderer.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -159,7 +160,10 @@
     <ClInclude Include="Math\Color.h" />
     <ClInclude Include="Math\mathUtils.h" />
     <ClInclude Include="Math\Ray.h" />
+    <ClInclude Include="Objects\Object.h" />
+    <ClInclude Include="Objects\Sphere.h" />
     <ClInclude Include="Renderer\Canvas.h" />
+    <ClInclude Include="Renderer\Material.h" />
     <ClInclude Include="Renderer\Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
