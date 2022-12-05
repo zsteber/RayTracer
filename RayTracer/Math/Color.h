@@ -2,10 +2,12 @@
 #include "mathUtils.h"
 
 using rgba_t = uint32_t;
+using color3 = glm::vec3;
+using color4 = glm::vec4;
 
 inline glm::vec4 RGBAToColor(const rgba_t& rgba)
 {
-    glm::vec4 color;
+    color4 color;
 
     color.r = ((rgba >> 24) & 0xff) / 255.0f;
     color.g = ((rgba >> 16) & 0xff) / 255.0f;

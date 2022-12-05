@@ -158,6 +158,7 @@
   <ItemGroup>
     <ClInclude Include="Math\Color.h" />
     <ClInclude Include="Math\mathUtils.h" />
+    <ClInclude Include="Math\Ray.h" />
     <ClInclude Include="Renderer\Canvas.h" />
     <ClInclude Include="Renderer\Renderer.h" />
   </ItemGroup>

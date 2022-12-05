@@ -33,10 +33,10 @@ int main(int, char**)
 
 		//render scene
 		canvas.Clear({ 0, 0, 0, 1 });
-		for (int i = 0; i < 10000; i++) {
-
-			canvas.DrawPoint({ random(0, 800), random(0, 600) }, { 1, 1, 1, 1 });
-		}
+		renderer.Render(canvas);
+		//for (int i = 0; i < 10000; i++) {
+		//	canvas.DrawPoint({ random(0, 800), random(0, 600) }, { 1, 1, 1, 1 });
+		//}
 		canvas.Update();
 
 		renderer.CopyCanvas(canvas);
