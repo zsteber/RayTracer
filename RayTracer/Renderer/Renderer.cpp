@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void Renderer::Render(Canvas& canvas, Scene& scene, Camera& camera)
+void Renderer::Render(Canvas& canvas, Scene& scene, Camera& camera, int samples)
 {
 	// camera / viewport 
 	glm::vec3 lowerLeft{ -2, -1, -1 };
@@ -16,16 +16,29 @@ void Renderer::Render(Canvas& canvas, Scene& scene, Camera& camera)
 	{
 		for (int x = 0; x < canvas.GetWidth(); x++)
 		{
-			glm::vec2 point = glm::vec2{ x, y } / glm::vec2{ canvas.GetWidth(), canvas.GetHeight() };
-			// flip y 
-			point.y = 1.0f - point.y;
 
-			// create ray from camera 
-			Ray ray = camera.PointToRay(point);
+			color3 color{ 0, 0, 0 };
+			for (int s = 0; s < samples; s++)
+			{
 
-			// cast ray into scene, get color 
-			RaycastHit raycastHit;
-			color3 color = scene.Trace(ray, 0.001f, 1000.0f, raycastHit, 5);
+				// get normalized (0 - 1) u, v coordinates from screen x and y 
+				float u = x / (float)canvas.GetWidth();
+				float v = 1 - (y / (float)canvas.GetHeight());
+				// add random value (0-1) to screen x and y for anti-aliasing  
+				glm::vec2 point = glm::vec2{ random01() + x, random01() + y } / glm::vec2{ canvas.m_width, canvas.m_height };
+
+				// flip y 
+				point.y = 1.0f - point.y;
+
+				// create ray from camera 
+				Ray ray = camera.PointToRay(point);
+
+				// cast ray into scene 
+				RaycastHit raycastHit;
+				// add trace color value to color 
+				color += scene.Trace(ray, 0.001f, 1000.0f, raycastHit, 5);
+			}
+			color /= samples;
 			canvas.DrawPoint({ x, y }, color4(color, 1));
 		}
 	}
