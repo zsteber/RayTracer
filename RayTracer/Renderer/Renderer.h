@@ -3,6 +3,7 @@
 #include "../Objects/Object.h"
 #include "../Objects/Scene.h"
 #include "../Math/Ray.h"
+#include "Camera.h"
 #include <SDL.h> 
 
 class Object;
@@ -13,7 +14,7 @@ class Renderer
 public:
 	Renderer() = default;
 
-	void Render(Canvas& canvas, Scene& scene);
+	void Render(Canvas& canvas, Scene& scene, Camera& camera);
 
 	bool Initialize();
 	void Shutdown();
