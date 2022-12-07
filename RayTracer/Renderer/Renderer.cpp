@@ -16,11 +16,9 @@ void Renderer::Render(Canvas& canvas, Scene& scene, Camera& camera, int samples)
 	{
 		for (int x = 0; x < canvas.GetWidth(); x++)
 		{
-
 			color3 color{ 0, 0, 0 };
 			for (int s = 0; s < samples; s++)
 			{
-
 				// get normalized (0 - 1) u, v coordinates from screen x and y 
 				float u = x / (float)canvas.GetWidth();
 				float v = 1 - (y / (float)canvas.GetHeight());
