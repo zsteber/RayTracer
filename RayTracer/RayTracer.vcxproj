@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Objects\Plane.cpp" />
     <ClCompile Include="Objects\Scene.cpp" />
     <ClCompile Include="Objects\Sphere.cpp" />
     <ClCompile Include="Renderer\Camera.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Math\mathUtils.h" />
     <ClInclude Include="Math\Ray.h" />
     <ClInclude Include="Objects\Object.h" />
+    <ClInclude Include="Objects\Plane.h" />
     <ClInclude Include="Objects\Scene.h" />
     <ClInclude Include="Objects\Sphere.h" />
     <ClInclude Include="Renderer\Camera.h" />
